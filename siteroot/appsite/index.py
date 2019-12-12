@@ -13,6 +13,11 @@ def page_not_found(e):  # 接受异常对象作为参数
 def hello():
     return "<h1>hello, world</h1>"
 
-@app.route('/')
+@app.route("/")
 def index():
+    return render_template('base.html')
+
+@app.route('/404')
+def a404():
     abort(404)
+
