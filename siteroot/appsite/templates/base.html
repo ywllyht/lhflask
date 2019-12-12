@@ -1,0 +1,75 @@
+{%extends "bootstrap/base.html"%}
+
+{%block title %}{{ title }}{% endblock %}
+{% block head %}
+{{ super() }}
+<link
+    href="https://cdn.pydata.org/bokeh/release/bokeh-1.0.4.min.css"
+    rel="stylesheet" type="text/css">
+<link
+    href="https://cdn.pydata.org/bokeh/release/bokeh-widgets-1.0.4.min.css"
+    rel="stylesheet" type="text/css">
+<link
+    href="https://cdn.pydata.org/bokeh/release/bokeh-tables-1.0.4.min.css"
+    rel="stylesheet" type="text/css">
+
+<script src="https://cdn.pydata.org/bokeh/release/bokeh-1.0.4.min.js"></script>
+<script src="https://cdn.pydata.org/bokeh/release/bokeh-widgets-1.0.4.min.js"></script>
+<script src="https://cdn.pydata.org/bokeh/release/bokeh-tables-1.0.4.min.js"></script>
+  
+{% endblock %}
+
+
+
+
+{%block navbar %}
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid"> 
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#">Home</a>
+    </div>
+    <div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Menu1</a></li>
+            <li><a href="#">Menu2</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    System 
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">memory</a></li>
+                    <li><a href="#">swap</a></li>
+                    <li><a href="#">CPU</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">IO & network</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">disk status</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    </div>
+</nav>
+{% endblock %}
+
+{% block flash %}
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    {% endwith %}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="page-header">
+        <h1>Hello</h1>
+    </div>
+</div>
+
+{% endblock %}

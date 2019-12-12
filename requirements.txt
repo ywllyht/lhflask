@@ -1,0 +1,6 @@
+python-dotenv
+flask
+flask_bootstrap
+flask_sqlalchemy
+flask_login
+

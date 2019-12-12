@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{%block title %}{{ title }}{% endblock %}
+{% block head %}
+{{ super() }}
+  
+{{ plot_script|safe }}
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+    <div class="page-header">
+        <h1>price for {{name}}</h1>
+    </div>
+</div>
+
+      
+{{ plot_div|safe }}
+{% endblock %}
